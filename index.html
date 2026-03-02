@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy 26th Birthday! 🌸</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            background: #f5f1ed;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Courier New', monospace;
+            image-rendering: pixelated;
+            image-rendering: -moz-crisp-edges;
+            image-rendering: crisp-edges;
+        }
+
+        .container {
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        h1 {
+            color: #2d2d2d;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: normal;
+            letter-spacing: 2px;
+        }
+
+        .subtitle {
+            color: #666;
+            font-size: 1em;
+            margin-bottom: 50px;
+            font-weight: normal;
+        }
+
+        .bouquet-wrapper {
+            display: inline-block;
+            position: relative;
+        }
+
+        .flowers-container {
+            display: flex;
+            gap: 40px;
+            justify-content: center;
+            align-items: flex-end;
+            padding: 20px;
+        }
+
+        .flower {
+            cursor: pointer;
+            transition: transform 0.2s ease;
+            position: relative;
+            animation: fadeIn 0.8s ease-out backwards;
+        }
+
+        .flower:nth-child(1) { animation-delay: 0.1s; }
+        .flower:nth-child(2) { animation-delay: 0.2s; }
+        .flower:nth-child(3) { animation-delay: 0.3s; }
+        .flower:nth-child(4) { animation-delay: 0.4s; }
+
+        .flower:hover {
+            transform: translateY(-10px);
+        }
+
+        /* SVG-based pixel art flowers */
+        .flower svg {
+            display: block;
+            width: 80px;
+            height: auto;
+        }
+
+        .instruction {
+            color: #666;
+            font-size: 0.9em;
+            margin-top: 40px;
+            letter-spacing: 1px;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Hover tooltip */
+        .flower::after {
+            content: 'click me';
+            position: absolute;
+            bottom: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #2d2d2d;
+            color: #f5f1ed;
+            padding: 4px 8px;
+            font-size: 0.75em;
+            opacity: 0;
+            transition: opacity 0.2s;
+            white-space: nowrap;
+            pointer-events: none;
+        }
+
+        .flower:hover::after {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>happy 26th birthday!</h1>
+        <p class="subtitle">click each flower for a special video message</p>
+        
+        <div class="bouquet-wrapper">
+            <div class="flowers-container">
+                <!-- Flower 1 - Pink Rose -->
+                <div class="flower" onclick="openVideo('VIDEO_URL_1')">
+                    <svg viewBox="0 0 32 48" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Petals -->
+                        <rect x="10" y="6" width="4" height="4" fill="#ff6b9d"/>
+                        <rect x="18" y="6" width="4" height="4" fill="#ff6b9d"/>
+                        <rect x="6" y="10" width="4" height="4" fill="#ff6b9d"/>
+                        <rect x="22" y="10" width="4" height="4" fill="#ff6b9d"/>
+                        <rect x="10" y="10" width="4" height="4" fill="#ff8fb3"/>
+                        <rect x="18" y="10" width="4" height="4" fill="#ff8fb3"/>
+                        <rect x="14" y="10" width="4" height="4" fill="#ffb3cc"/>
+                        <rect x="10" y="14" width="4" height="4" fill="#ff6b9d"/>
+                        <rect x="18" y="14" width="4" height="4" fill="#ff6b9d"/>
+                        <rect x="14" y="14" width="4" height="4" fill="#ffe6f0"/>
+                        <!-- Center -->
+                        <rect x="14" y="10" width="4" height="4" fill="#ffd700"/>
+                        <!-- Stem -->
+                        <rect x="14" y="18" width="4" height="4" fill="#4a7c4e"/>
+                        <rect x="14" y="22" width="4" height="4" fill="#4a7c4e"/>
+                        <rect x="14" y="26" width="4" height="4" fill="#4a7c4e"/>
+                        <rect x="14" y="30" width="4" height="4" fill="#4a7c4e"/>
+                        <rect x="14" y="34" width="4" height="4" fill="#4a7c4e"/>
+                        <!-- Leaves -->
+                        <rect x="10" y="26" width="4" height="4" fill="#5c8f5f"/>
+                        <rect x="18" y="30" width="4" height="4" fill="#5c8f5f"/>
+                    </svg>
+                </div>
+
+                <!-- Flower 2 - Purple Tulip -->
+                <div class="flower" onclick="openVideo('VIDEO_URL_2')">
+                    <svg viewBox="0 0 32 48" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Petals -->
+                        <rect x="10" y="8" width="4" height="4" fill="#9b7fc6"/>
+                        <rect x="18" y="8" width="4" height="4" fill="#9b7fc6"/>
+                        <rect x="10" y="12" width="4" height="4" fill="#b19dd8"/>
+                        <rect x="18" y="12" width="4" height="4" fill="#b19dd8"/>
+                        <rect x="14" y="6" width="4" height="4" fill="#8b6fb5"/>
+                        <rect x="14" y="10" width="4" height="4" fill="#c7b8e8"/>
+                        <rect x="14" y="14" width="4" height="4" fill="#b19dd8"/>
+                        <rect x="10" y="16" width="4" height="4" fill="#9b7fc6"/>
+                        <rect x="18" y="16" width="4" height="4" fill="#9b7fc6"/>
+                        <!-- Stem -->
+                        <rect x="14" y="18" width="4" height="4" fill="#4a7c4e"/>
+                        <rect x="14" y="22" width="4" height="4" fill="#4a7c4e"/>
+                        <rect x="14" y="26" width="4" height="4" fill="#4a7c4e"/>
+                        <rect x="14" y="30" width="4" height="4" fill="#4a7c4e"/>
+                        <rect x="14" y="34" width="4" height="4" fill="#4a7c4e"/>
+                        <!-- Leaves -->
+                        <rect x="10" y="24" width="4" height="4" fill="#5c8f5f"/>
+                        <rect x="18" y="28" width="4" height="4" fill="#5c8f5f"/>
+                    </svg>
+                </div>
+
+                <!-- Flower 3 - Yellow Sunflower -->
+                <div class="flower" onclick="openVideo('VIDEO_URL_3')">
+                    <svg viewBox="0 0 32 48" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Outer petals -->
+                        <rect x="14" y="2" width="4" height="4" fill="#ffd93d"/>
+                        <rect x="6" y="6" width="4" height="4" fill="#ffd93d"/>
+                        <rect x="22" y="6" width="4" height="4" fill="#ffd93d"/>
+                        <rect x="2" y="10" width="4" height="4" fill="#ffd93d"/>
+                        <rect x="26" y="10" width="4" height="4" fill="#ffd93d"/>
+                        <rect x="6" y="14" width="4" height="4" fill="#ffd93d"/>
+                        <rect x="22" y="14" width="4" height="4" fill="#ffd93d"/>
+                        <rect x="14" y="18" width="4" height="4" fill="#ffd93d"/>
+                        <!-- Inner petals -->
+                        <rect x="10" y="6" width="4" height="4" fill="#ffed4e"/>
+                        <rect x="18" y="6" width="4" height="4" fill="#ffed4e"/>
+                        <rect x="6" y="10" width="4" height="4" fill="#ffed4e"/>
+                        <rect x="22" y="10" width="4" height="4" fill="#ffed4e"/>
+                        <rect x="10" y="14" width="4" height="4" fill="#ffed4e"/>
+                        <rect x="18" y="14" width="4" height="4" fill="#ffed4e"/>
+                        <!-- Center -->
+                        <rect x="10" y="10" width="4" height="4" fill="#8b4513"/>
+                        <rect x="14" y="10" width="4" height="4" fill="#8b4513"/>
+                        <rect x="18" y="10" width="4" height="4" fill="#8b4513"/>
+                        <rect x="14" y="14" width="4" height="4" fill="#8b4513"/>
+                        <!-- Stem -->
+                        <rect x="14" y="20" width="4" height="4" fill="#4a7c4e"/>
+                        <rect x="14" y="24" width="4" height="4" fill="#4a7c4e"/>
+                        <rect x="14" y="28" width="4" height="4" fill="#4a7c4e"/>
+                        <rect x="14" y="32" width="4" height="4" fill="#4a7c4e"/>
+                        <rect x="14" y="36" width="4" height="4" fill="#4a7c4e"/>
+                        <!-- Leaves -->
+                        <rect x="10" y="28" width="4" height="4" fill="#5c8f5f"/>
+                        <rect x="18" y="32" width="4" height="4" fill="#5c8f5f"/>
+                    </svg>
+                </div>
+
+                <!-- Flower 4 - Red Poppy -->
+                <div class="flower" onclick="openVideo('VIDEO_URL_4')">
+                    <svg viewBox="0 0 32 48" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Petals -->
+                        <rect x="6" y="8" width="4" height="4" fill="#ff4757"/>
+                        <rect x="22" y="8" width="4" height="4" fill="#ff4757"/>
+                        <rect x="10" y="8" width="4" height="4" fill="#ff6b81"/>
+                        <rect x="18" y="8" width="4" height="4" fill="#ff6b81"/>
+                        <rect x="6" y="12" width="4" height="4" fill="#ff6b81"/>
+                        <rect x="22" y="12" width="4" height="4" fill="#ff6b81"/>
+                        <rect x="10" y="12" width="4" height="4" fill="#ff8fa3"/>
+                        <rect x="18" y="12" width="4" height="4" fill="#ff8fa3"/>
+                        <rect x="10" y="16" width="4" height="4" fill="#ff4757"/>
+                        <rect x="18" y="16" width="4" height="4" fill="#ff4757"/>
+                        <!-- Center -->
+                        <rect x="14" y="10" width="4" height="4" fill="#2f3542"/>
+                        <rect x="14" y="14" width="4" height="4" fill="#2f3542"/>
+                        <!-- Stem -->
+                        <rect x="14" y="18" width="4" height="4" fill="#4a7c4e"/>
+                        <rect x="14" y="22" width="4" height="4" fill="#4a7c4e"/>
+                        <rect x="14" y="26" width="4" height="4" fill="#4a7c4e"/>
+                        <rect x="14" y="30" width="4" height="4" fill="#4a7c4e"/>
+                        <rect x="14" y="34" width="4" height="4" fill="#4a7c4e"/>
+                        <!-- Leaves -->
+                        <rect x="10" y="26" width="4" height="4" fill="#5c8f5f"/>
+                        <rect x="18" y="30" width="4" height="4" fill="#5c8f5f"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <p class="instruction">click on any flower to watch a birthday message</p>
+    </div>
+
+    <script>
+        function openVideo(url) {
+            window.open(url, '_blank');
+        }
+    </script>
+</body>
+</html>
