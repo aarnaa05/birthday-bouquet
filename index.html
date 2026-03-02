@@ -54,6 +54,7 @@
             justify-content: center;
             align-items: flex-end;
             padding: 20px;
+            flex-wrap: nowrap;
         }
 
         .flower {
@@ -84,6 +85,65 @@
             font-size: 0.9em;
             margin-top: 40px;
             letter-spacing: 1px;
+        }
+
+        /* Mobile responsive styles */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 1.8em;
+                letter-spacing: 1px;
+            }
+
+            .subtitle {
+                font-size: 0.9em;
+                padding: 0 10px;
+            }
+
+            .flowers-container {
+                flex-wrap: wrap;
+                gap: 20px;
+                max-width: 280px;
+                margin: 0 auto;
+                justify-content: center;
+            }
+
+            .flower svg {
+                width: 60px;
+            }
+
+            .instruction {
+                font-size: 0.8em;
+                margin-top: 30px;
+                padding: 0 20px;
+            }
+
+            .container {
+                padding: 20px 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.5em;
+            }
+
+            .subtitle {
+                font-size: 0.85em;
+            }
+
+            .flowers-container {
+                gap: 15px;
+                max-width: 240px;
+            }
+
+            .flower svg {
+                width: 50px;
+            }
+
+            .flower::after {
+                font-size: 0.7em;
+                bottom: -20px;
+            }
         }
 
         @keyframes fadeIn {
